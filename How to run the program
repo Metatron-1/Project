@@ -1,0 +1,12 @@
+To run the the practical implementation of our app:
+
+Step 1: copy the entire code
+Step 2: Search for Replit on google or follow the link here: https://replit.com/~   //This is an online code editor
+Step 3: Create an account or login with your Email account
+Step 4: Once logged in click the plus sign and search for javaFX(OPENJFK), or use this link: https://replit.com/@replit/JavaFX-OpenJFX
+--when using the link on step 4 you may need to do step 3--
+Step 5: After that Add the REpl/ use Template
+Step 6: Name the Repl : Main.java
+Step 7: Open the Repl and erase the build-in code, then paste the section B code //It will run the program without the of JAVASDK,JAVAIDE installed on your machine.
+
+---WE recommend use a computer when running the code(for better view)---
