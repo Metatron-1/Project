@@ -2,9 +2,9 @@ Phonebook Application:
 
 Overview
 
-The Phonebook Application is a simple contact management system that allows users to store, search, update, delete, and display contact information. The app uses linked lists for data storage and management, offering basic contact management functionalities in a command-line or GUI interface. This application is suitable for beginners learning data structures, especially linked lists, in Java.
+The Phonebook Application is a simple contact management system that allows users to store, search, update, delete, and display contact information. The app uses linked lists for data storage and management, offering basic contact management functionalities in a command-line or GUI interface.
 
-Features
+Features:
 
 The application includes the following functionalities:
 
@@ -30,7 +30,7 @@ The application includes the following functionalities:
 
 
 
-Modules
+Modules:
 
 The Phonebook Application is divided into the following modules:
 
@@ -79,7 +79,7 @@ Allows users to interact with the phonebook functions through buttons, text fiel
 
 Project Structure:
 
-The project has a simple structure with a main class (Phonebook) that holds all the logic. Additional classes include Node and Contact to handle the linked list data structure and individual contact details, respectively.
+The project has a simple structure with a main class that holds all the logic. Additional classes include Node and Contact to handle the linked list data structure and individual contact details, respectively.
 
 Contributors:
 
