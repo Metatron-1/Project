@@ -1,4 +1,5 @@
 import javafx.application.Application;
+import javafx.geometry.Insets;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
@@ -134,20 +135,39 @@ public class Main extends Application {
     public void start(Stage primaryStage) {
         primaryStage.setTitle("PhoneBook Application");
         VBox layout = new VBox(10);
-        layout.setPadding(new javafx.geometry.Insets(20));
+        layout.setPadding(new Insets(20));
+        layout.setStyle("-fx-background-color: #8B4513;"); // Set background color to brown
 
         // Input Fields
         TextField nameField = new TextField();
         nameField.setPromptText("Name");
+        nameField.setStyle("-fx-background-color: #FAF3E0; -fx-text-fill: #333333; -fx-border-color: #cccccc; -fx-border-radius: 5px;");
 
         TextField phoneField = new TextField();
         phoneField.setPromptText("Phone Number");
+        phoneField.setStyle("-fx-background-color: #FAF3E0; -fx-text-fill: #333333; -fx-border-color: #cccccc; -fx-border-radius: 5px;");
 
         TextField relationField = new TextField();
         relationField.setPromptText("Relation");
+        relationField.setStyle("-fx-background-color: #FAF3E0; -fx-text-fill: #333333; -fx-border-color: #cccccc; -fx-border-radius: 5px;");
 
         // Buttons
         Button insertButton = new Button("Insert Contact");
+        styleButton(insertButton);
+
+        Button searchButton = new Button("Search Contact");
+        styleButton(searchButton);
+
+        Button deleteButton = new Button("Delete Contact");
+        styleButton(deleteButton);
+
+        Button updateButton = new Button("Update Contact");
+        styleButton(updateButton);
+
+        Button sortButton = new Button("Sort A-Z");
+        styleButton(sortButton);
+
+        // Button Actions
         insertButton.setOnAction(e -> {
             String name = nameField.getText();
             String phoneNumber = phoneField.getText();
@@ -159,7 +179,6 @@ public class Main extends Application {
             }
         });
 
-        Button searchButton = new Button("Search Contact");
         searchButton.setOnAction(e -> {
             String name = nameField.getText();
             Contact contact = phonebook.searchContact(name);
@@ -174,7 +193,6 @@ public class Main extends Application {
             }
         });
 
-        Button deleteButton = new Button("Delete Contact");
         deleteButton.setOnAction(e -> {
             String name = nameField.getText();
             if (phonebook.deleteContact(name)) {
@@ -187,7 +205,6 @@ public class Main extends Application {
             }
         });
 
-        Button updateButton = new Button("Update Contact");
         updateButton.setOnAction(e -> {
             String oldName = nameField.getText();
             String newName = nameField.getText();
@@ -198,7 +215,6 @@ public class Main extends Application {
             clearFields(nameField, phoneField, relationField);
         });
 
-        Button sortButton = new Button("Sort A-Z");
         sortButton.setOnAction(e -> {
             phonebook.sortContacts();
             updateContactListView();
@@ -224,5 +240,11 @@ public class Main extends Application {
         nameField.clear();
         phoneField.clear();
         relationField.clear();
+    }
+
+    private void styleButton(Button button) {
+        button.setStyle("-fx-background-color: #4CAF50; -fx-text-fill: white; -fx-border-radius: 5px; -fx-font-weight: bold;");
+        button.setOnMouseEntered(e -> button.setStyle("-fx-background-color: #45a049; -fx-text-fill: white;"));
+        button.setOnMouseExited(e -> button.setStyle("-fx-background-color: #4CAF50; -fx-text-fill: white;"));
     }
 }
