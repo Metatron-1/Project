@@ -55,7 +55,7 @@ public class Main extends Application {
         alert.setContentText("A contact with the name '" + name + "' already exists.");
         alert.showAndWait();
         return;
-    } //This if statement checks if the entered contact already exists in the database
+    } //This if statement checks if the entered contact already exists in the phonebook
 
     Contact newContact = new Contact(name, phoneNumber, relation);
     Node newNode = new Node(newContact);
