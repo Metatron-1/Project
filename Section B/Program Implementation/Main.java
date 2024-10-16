@@ -47,20 +47,31 @@ public class Main extends Application {
             this.head = null;
         }
 
-        public void insertContact(String name, String phoneNumber, String relation) {
-            Contact newContact = new Contact(name, phoneNumber, relation);
-            Node newNode = new Node(newContact);
+     public void insertContact(String name, String phoneNumber, String relation) {
+    if (searchContact(name) != null) {
+        Alert alert = new Alert(Alert.AlertType.WARNING);
+        alert.setTitle("Duplicate Contact");
+        alert.setHeaderText(null);
+        alert.setContentText("A contact with the name '" + name + "' already exists.");
+        alert.showAndWait();
+        return;
+    } //This if statement checks if the entered contact already exists in the database
 
-            if (head == null) {
-                head = newNode;
-            } else {
-                Node current = head;
-                while (current.next != null) {
-                    current = current.next;
-                }
-                current.next = newNode;
-            }
+    Contact newContact = new Contact(name, phoneNumber, relation);
+    Node newNode = new Node(newContact);
+
+    if (head == null) {
+        head = newNode;
+    } else {
+        Node current = head;
+        while (current.next != null) {
+            current = current.next;
         }
+        current.next = newNode;
+    }
+}
+
+
 
         public Contact searchContact(String name) {
             Node current = head;
